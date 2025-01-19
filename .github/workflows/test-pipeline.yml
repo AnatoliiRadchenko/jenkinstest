@@ -2,7 +2,10 @@
 # edited by Anatolii Radchenko
 #---------------
 name: MyGithubActionsBasics
-
+env:
+  APPLICATION_NAME: "My_app"
+  PACKAGE_NAME    : "app-deploy-ver-${{ github.sha }}"
+  
 #on: [push]
 on:
   push:
@@ -15,6 +18,13 @@ jobs:
     steps:
     - name: print hello message
       run: echo "hello world from test!"
+
+    - name: exec vew commands
+      run: |
+        echo "hello msg:"
+        echo "hello msg:"
+        echo "app name: ${{ env.APPLICATION_NAME }}"
+        echo "pkg name: ${{ env.PACKAGE_NAME }}"
       
   my-deploy:
     runs-on: ubuntu-latest
