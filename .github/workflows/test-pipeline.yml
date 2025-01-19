@@ -25,6 +25,8 @@ jobs:
         echo "hello msg:"
         echo "app name: ${{ env.APPLICATION_NAME }}"
         echo "pkg name: ${{ env.PACKAGE_NAME }}"
+    - name: git clone my ripo
+      uses: actions/checkout@v1
     - name: exec vew commands
       run:  ls -la
         
@@ -35,4 +37,9 @@ jobs:
     steps:
     - name: print hello message
       run: echo "hello world from deploy!"
+    - name: test aws
+      run: aws --version
+    - name: test aws
+      run: zip --version
+    
     
