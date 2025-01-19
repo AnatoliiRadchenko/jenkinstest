@@ -25,6 +25,9 @@ jobs:
         echo "hello msg:"
         echo "app name: ${{ env.APPLICATION_NAME }}"
         echo "pkg name: ${{ env.PACKAGE_NAME }}"
+    - name: exec vew commands
+      run:  ls -la
+        
       
   my-deploy:
     runs-on: ubuntu-latest
